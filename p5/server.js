@@ -3,6 +3,7 @@ var app = express()
 app.use(express.static('public'));
 var osc = require('node-osc');
 var io = require('socket.io')(8081);
+var config = require("./public/config.js");
 
 
 //BRIDGE
@@ -44,6 +45,6 @@ app.get('/', function (req, res) {
   res.send('Hello World!')
 })
 
-app.listen(8080, '128.122.6.219', function () {
+app.listen(8080, config.ip, function () {
   console.log('Example app listening on port 8080!')
 })

@@ -16,6 +16,7 @@ function preload() {
 
 }
 function setup() {
+  console.log(config.ip);
   x =windowWidth;
   y= windowHeight
   createCanvas(x , y);
@@ -79,10 +80,10 @@ function sendOsc(address, value) {
 
 
 function setupOsc(oscPortIn, oscPortOut) {
-  socket = io.connect('http://128.122.6.219:8081', { port: 8081, rememberTransport: false });
+  socket = io.connect('http://'+config.ip+':8081', { port: 8081, rememberTransport: false });
   console.log("SetUp");
   socket.emit('config', {
-    server: { port: oscPortIn,  host: '128.122.6.219'},
-    client: { port: oscPortOut, host: '128.122.6.219'}
+    server: { port: oscPortIn,  host: config.ip},
+    client: { port: oscPortOut, host: config.ip}
   });
 }
