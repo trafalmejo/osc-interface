@@ -28,16 +28,22 @@ function setup() {
   var buton1 = createImg('/assets/button01.png');
   buton1.attribute('width', x/3);
   buton1.attribute('height', y/7);
+  buton1.attribute('onmouseover', "this.src='/assets/button01toggle.png'");
+  buton1.attribute('onmouseout', "this.src='/assets/button01.png'");
   buton1.position(xpos, ypos*3);
   buton1.mousePressed(boton1);
 
   var buton2 = createImg('/assets/button02.png');
+  buton2.attribute('onmouseover', "this.src='/assets/button02toggle.png'");
+  buton2.attribute('onmouseout', "this.src='/assets/button02.png'");
   buton2.attribute('width', x/3);
   buton2.attribute('height', y/7);
   buton2.position(xpos, ypos*5);
   buton2.mousePressed(boton2);
 
   var buton3 = createImg('/assets/button03.png');
+  buton3.attribute('onmouseover', "this.src='/assets/button03toggle.png'");
+  buton3.attribute('onmouseout', "this.src='/assets/button03.png'");
   buton3.attribute('width', x/3);
   buton3.attribute('height', y/7);
   buton3.position(xpos, ypos*7);
